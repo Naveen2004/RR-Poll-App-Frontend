@@ -1,0 +1,7 @@
+$theme-colors: (
+        "primary": black
+);
+
+$form-check-input-checked-bg-color:black;
+$form-check-input-focus-box-shadow: 0 0 0px 3px #00000044;
+@import "../node_modules/bootstrap/scss/bootstrap";
