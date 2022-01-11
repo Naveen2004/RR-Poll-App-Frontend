@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap');
+
+html {
+    height: 100% !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    height: 100% !important;
+    background: linear-gradient(-45deg, #4743EF -40%, #C020D0 140%) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+    flex: 0 !important;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header > h1 {
+    font-family: 'The Nautigal', sans-serif !important;
+    color: white !important;
+    text-shadow: 2px 2px 4px #00000088, 2px -1px 3px #000000cc !important;
+    user-select: none;
 }
 
-.App-link {
-  color: #61dafb;
+div.main {
+    flex: 1 !important;
+    max-width: 500px !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.main > div.row {
+    background: var(--bs-white);
+    border-radius: 10px;
+    padding: 15px 5px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.19), 5px 5px 6px rgba(0, 0, 0, 0.23), -2px -2px 20px rgba(0, 0, 0, 0.19), -2px -2px 6px rgba(0, 0, 0, 0.23) !important;
 }
+
+p.question {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700 !important;
+    font-size: 25px !important;
+    max-height: 75px !important;
+}
+
+p.question:first-letter {
+    padding-left: 15px;
+}
+
+div.options-wrapper {
+    font-family: 'Ubuntu', sans-serif !important;
+    cursor: pointer;
+    padding: 15px !important;
+    margin-bottom: 5px !important;
+    /*background: linear-gradient(45deg, #4743EF -40%, #C020D0 140%) !important;*/
+    border-radius: 10px !important;
+    transition: border-color, background-color .2s ease-out !important;
+}
+
+div.border-transparent {
+    border-color: transparent !important;
+}
+
+div.border-black {
+    border-color: black !important;
+}
+
+
+input[type="radio"] {
+    cursor: pointer !important;
+    margin-right: 10px !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-bottom: 3px !important;
+
+}
+
+label {
+    cursor: pointer !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    user-select: none !important;
+}
+
+div.error-msg {
+    text-align: right !important;
+    color: var(--bs-danger) !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+div.button-group {
+    margin-top: 25px !important;
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+div.button-group > button {
+    box-shadow: none !important;
+}
+
+button.negative {
+    border-width: medium !important;
+}
+
+button.positive > span {
+    display: inline-block !important;
+    position: relative !important;
+    transition: .2s !important;
+}
+
+@media only screen and (max-width: 376px) {
+    header > h1 {
+        font-size: 50px !important;
+    }
+
+    div.button-group > button {
+        width: 100px !important;
+    }
+
+    div.button-group {
+        padding: 0 5px !important;
+    }
+
+    button.negative {
+        background-color: transparent !important;
+        color: black !important;
+    }
+}
+
+@media only screen and (min-width: 376px) {
+    header > h1 {
+        font-size: 70px !important;
+    }
+
+    div.options-wrapper:hover {
+        background-color: #22222211;
+    }
+
+    div.button-group {
+        padding: 0 20px !important;
+    }
+
+    div.button-group > button {
+        width: 150px !important;
+    }
+
+    div.button-group > button:hover {
+        box-shadow: 0 0 5px 0 #222222dd !important;
+    }
+
+    button.positive > span:after {
+        content: '\00bb' !important;
+        color: white !important;
+        position: absolute !important;
+        opacity: 0 !important;
+        top: 0 !important;
+        right: 10px !important;;
+        transition: .2s !important;
+    }
+
+    button.positive:hover span {
+        padding-right: 15px !important;
+    }
+
+    button.positive:hover span:after {
+        opacity: 1 !important;
+        right: 0 !important;
+    }
+}
+
+
+
