@@ -1,0 +1,233 @@
+
+html {
+    background: var(--bs-gray-800);
+
+}
+
+div.dashboard {
+    background: var(--bs-gray-800);
+}
+
+h1, h2, label {
+    color: var(--bs-gray-100);
+}
+
+.dashboard header {
+    margin-bottom: 30px;
+    background: var(--bs-body-color);
+}
+
+.dashboard header img {
+    margin: 10px;
+    width: calc(1.375rem + 1.5vw);
+    height: calc(1.375rem + 1.5vw);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.dashboard header h1 {
+    padding: 10px 0;
+}
+
+.dashboard .col {
+    width: 90%;
+    max-width: 500px;
+}
+
+.dashboard .col .logout {
+    color: darkgoldenrod;
+}
+
+.dashboard .col .logout:hover {
+    color: goldenrod;
+}
+
+.dashboard .col .logout:visited:active {
+    color: darkgoldenrod;
+}
+
+.dashboard .col .user {
+    color: var(--bs-cyan);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.dashboard .col form h2 {
+    margin-bottom: 30px;
+}
+
+.dashboard .col form {
+    margin-top: 10px;
+    background: var(--bs-gray-900);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.dashboard .delete {
+    cursor: pointer;
+}
+
+.dashboard form input[type="text"] {
+    background: var(--bs-gray-800);
+    border-color: var(--bs-gray-600);
+    color: var(--bs-gray-400);
+    margin-bottom: 10px;
+}
+
+.dashboard input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--bs-gray-800) inset;
+    -webkit-text-fill-color: var(--bs-gray-200);
+    transition: all .3s;
+}
+
+
+.dashboard input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--bs-gray-800) inset;
+    -webkit-text-fill-color: var(--bs-gray-200);
+}
+
+.dashboard .divider {
+    height: 3px;
+    background: var(--bs-gray-600);
+    margin: 20px 0;
+}
+
+.dashboard i.delete {
+    color: var(--bs-danger);
+    font-size: 21px;
+}
+
+.dashboard .add-btn {
+    border-radius: 20px;
+    margin-top: 16px;
+}
+
+.dashboard .add-btn i, .dashboard .modal .modal-content .modal-footer .btn i {
+    margin-left: 7px;
+}
+
+.dashboard .error {
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.dashboard .btn-bar {
+    margin-top: 44px;
+}
+
+.dashboard .btn-bar button {
+    width: 100px;
+}
+
+
+.dashboard .modal .modal-content {
+    background: var(--bs-gray-800);
+    color: var(--bs-gray-100);
+}
+
+.dashboard .modal .modal-content .input-group {
+    margin: auto;
+    padding: 0 20px;
+}
+
+.dashboard .modal .modal-content .input-group input {
+    background: var(--bs-gray-600);
+    color: var(--bs-gray-200);
+    border-color: var(--bs-gray-600);
+}
+
+.dashboard .modal .modal-content .input-group span {
+    background: var(--bs-gray-700);
+    color: var(--bs-gray-200);
+    border-color: var(--bs-gray-700);
+    cursor: pointer;
+}
+
+.dashboard .modal .modal-content .input-group span:hover {
+    background: var(--bs-gray-800);
+}
+
+.dashboard .modal .modal-content .modal-header {
+    border-bottom: 1px solid var(--bs-gray-600);
+}
+
+.dashboard .modal .modal-content .modal-footer {
+    border-top: 1px solid var(--bs-gray-600);
+}
+
+.dashboard .modal .modal-content .modal-footer .btn-success {
+    background: #25D366;
+}
+
+.dashboard .modal .modal-content .modal-footer .btn-success:hover {
+    background: #14C255;
+}
+
+.dashboard .modal .modal-content .modal-footer .btn {
+    font-weight: bold;
+    width: 100px;
+}
+
+.dashboard .card {
+    background: var(--bs-gray-700);
+    color: var(--bs-gray-100);
+    width: 90%;
+    max-width: 700px;
+    margin: 5px 5px 0;
+}
+
+.dashboard .recents .card-header span p {
+    font-style: italic;
+    color: var(--bs-gray-500);
+    margin-bottom: inherit;
+}
+
+.dashboard .recents .card-header span i.fa {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.dashboard .recents .card-header span i.fa:hover {
+    color: var(--bs-danger);
+    font-size: 20px;
+}
+
+.dashboard .card .card-body .input-group {
+    margin: auto;
+    width: 80%;
+    max-width: 450px;
+}
+
+.dashboard .card-body .input-group input[type="text"] {
+    background: #00000011;
+    border-color: var(--bs-gray-600);
+    color: var(--bs-gray-400);
+}
+
+.dashboard .card .card-body .input-group span {
+    background: #22222222;
+    color: var(--bs-gray-200);
+    border-color: var(--bs-gray-600);
+    cursor: pointer;
+}
+
+.dashboard .card .card-body .input-group span:hover {
+    background: var(--bs-gray-800);
+}
+
+.dashboard .recents .card-footer p {
+    margin-bottom: inherit;
+}
+
+.dashboard .toast .toast-header {
+    background: #22222222;
+    color: var(--bs-gray-100);
+}
+
+.dashboard .toast {
+    background: var(--bs-gray-700);
+    color: var(--bs-gray-100);
+    box-shadow: 0 0 20px 3px #333333cc;
+}

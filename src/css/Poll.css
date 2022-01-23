@@ -8,147 +8,207 @@ html {
 }
 
 body {
+    height: 100%;
+}
+
+div.poll-bg {
     height: 100% !important;
     background: linear-gradient(-45deg, #4743EF -40%, #C020D0 140%) !important;
 }
 
-header {
-    flex: 0 !important;
-
+.poll header {
+    /*flex: 0 !important;*/
 }
 
-header > h1 {
+.poll .footer {
+    position: absolute;
+    font-size: 14px;
+    margin: 10px;
+    opacity: .5;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    text-shadow: 1px 1px 1px #000000cc;
+}
+
+.poll header > h1 {
     font-family: 'The Nautigal', sans-serif !important;
     color: white !important;
     text-shadow: 2px 2px 4px #00000088, 2px -1px 3px #000000cc !important;
     user-select: none;
 }
 
-div.main {
-    flex: 1 !important;
+.poll div.main {
+    /*flex: 2 !important;*/
     max-width: 500px !important;
+    margin-top: 50px;
 }
 
-div.main > div.row {
+.poll div.main > div.row {
     background: var(--bs-white);
     border-radius: 10px;
-    padding: 15px 5px;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.19), 5px 5px 6px rgba(0, 0, 0, 0.23), -2px -2px 20px rgba(0, 0, 0, 0.19), -2px -2px 6px rgba(0, 0, 0, 0.23) !important;
 }
 
-p.question {
+.poll div.main div.col {
+    padding: 15px 5px;
+}
+
+.poll p.question {
     font-family: 'Montserrat', sans-serif;
+    color: black;
     font-weight: 700 !important;
     font-size: 25px !important;
     max-height: 75px !important;
 }
 
-p.question:first-letter {
+.poll p.question:first-letter {
     padding-left: 15px;
 }
 
-div.options-wrapper {
+.poll div.options-wrapper {
     font-family: 'Ubuntu', sans-serif !important;
     cursor: pointer;
     padding: 15px !important;
     margin-bottom: 5px !important;
     /*background: linear-gradient(45deg, #4743EF -40%, #C020D0 140%) !important;*/
     border-radius: 10px !important;
-    transition: border-color, background-color .2s ease-out !important;
+    transition: border-color, background .2s ease-out !important;
 }
 
-div.border-transparent {
+.poll div.border-transparent {
     border-color: transparent !important;
 }
 
-div.border-black {
+.poll div.border-black {
     border-color: black !important;
 }
 
+.poll div.border-white {
+    border-color: white !important;
+}
 
-input[type="radio"] {
+
+.poll input[type="radio"] {
     cursor: pointer !important;
     margin-right: 10px !important;
     width: 16px !important;
     height: 16px !important;
     margin-bottom: 3px !important;
-
 }
 
-label {
+
+.poll label {
     cursor: pointer !important;
     font-weight: bold !important;
     margin: 0 !important;
     user-select: none !important;
+    opacity: 1 !important;
+    color: inherit;
 }
 
-div.error-msg {
+.poll div.votes {
+    left: -0.5px;
+    top: -0.5px;
+    width: 0;
+    height: calc(100% + 1.5px);
+    min-width: 7px;
+    transition: width ease-out 1s;
+}
+
+.poll div.error-msg {
     text-align: right !important;
     color: var(--bs-danger) !important;
     font-weight: bold !important;
     font-size: 14px !important;
 }
 
-div.button-group {
+.poll div.button-group {
     margin-top: 25px !important;
     font-family: 'Noto Sans', sans-serif !important;
 }
 
-div.button-group > button {
+.poll div.button-group > button {
     box-shadow: none !important;
 }
 
-button.negative {
+.poll button.negative {
     border-width: medium !important;
 }
 
-button.positive > span {
+.poll button.positive > span {
     display: inline-block !important;
     position: relative !important;
     transition: .2s !important;
 }
 
+.poll .nf-404 h1 {
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    font-size: 50px;
+
+}
+
+.poll .nf-404 img {
+    width: 90%;
+    max-width: 300px;
+    height: 90%;
+    max-height: 300px;
+    margin: 20px 0;
+}
+
+.poll .nf-404 p {
+    font-family: 'Noto Sans', sans-serif !important;
+    margin: 0 20px;
+}
+
+.poll .vote-thank p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
 @media only screen and (max-width: 376px) {
-    header > h1 {
+    .poll header > h1 {
         font-size: 50px !important;
     }
 
-    div.button-group > button {
+    .poll div.button-group > button {
         width: 100px !important;
     }
 
-    div.button-group {
+    .poll div.button-group {
         padding: 0 5px !important;
     }
 
-    button.negative {
+    .poll button.negative {
         background-color: transparent !important;
         color: black !important;
     }
 }
 
 @media only screen and (min-width: 376px) {
-    header > h1 {
+    .poll header > h1 {
         font-size: 70px !important;
     }
 
-    div.options-wrapper:hover {
+    .poll div.options-wrapper:hover {
         background-color: #22222211;
     }
 
-    div.button-group {
+    .poll div.button-group {
         padding: 0 20px !important;
     }
 
-    div.button-group > button {
+    .poll div.button-group > button {
         width: 150px !important;
     }
 
-    div.button-group > button:hover {
+    .poll div.button-group > button:hover {
         box-shadow: 0 0 5px 0 #222222dd !important;
     }
 
-    button.positive > span:after {
+    .poll button.positive > span:after {
         content: '\00bb' !important;
         color: white !important;
         position: absolute !important;
@@ -158,11 +218,11 @@ button.positive > span {
         transition: .2s !important;
     }
 
-    button.positive:hover span {
+    .poll button.positive:hover span {
         padding-right: 15px !important;
     }
 
-    button.positive:hover span:after {
+    .poll button.positive:hover span:after {
         opacity: 1 !important;
         right: 0 !important;
     }
