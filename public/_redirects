@@ -1,5 +1,0 @@
-/ /dashboard
-/login /login
-/signup /signup
-/dashboard /dashboard
-/poll/* /poll/:splat
