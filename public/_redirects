@@ -2,4 +2,4 @@
 /login /login
 /signup /signup
 /dashboard /dashboard
-/poll/:id /poll/:splat
+/poll/* /poll/:splat
