@@ -145,7 +145,7 @@ class Main extends React.Component {
                     </div> : <div/>))}
             </div>
             <div className="bottom-0 end-0 footer">
-                <span>{!(this.state.notFound || this.state.kallaVote) ? `Created by - ${this.state.data.user}` : ""}</span>
+                <span>{!(this.state.notFound || this.state.kallaVote || !this.state.data.user) ? `Created by - ${this.state.data.user}` : ""}</span>
             </div>
         </div>);
     }

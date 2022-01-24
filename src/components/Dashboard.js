@@ -219,7 +219,7 @@ class Main extends React.Component {
             {this.state.recentPolls.map(this.setRecentPolls)}
         </div>;
 
-        return (this.state.user.name ? <div className="dashboard h-100">
+        return (<div className="dashboard h-100">
             <header className="">
                 <img src={logo} alt="logo"/>
                 <h1 className="text-center">DASHBOARD</h1>
@@ -227,7 +227,7 @@ class Main extends React.Component {
             <div className="col mx-auto">
                 <div className="d-flex justify-content-between user">
                     <p className="d-inline-block"
-                    >{"Welcome, " + this.state.user.name}</p>
+                    >{"Welcome, " + (this.state.user.name?this.state.user.name:"")}</p>
                     <a className="logout" href="#" onClick={this.logout}>Logout</a>
                 </div>
                 <form noValidate={true}>
@@ -352,7 +352,7 @@ class Main extends React.Component {
                     </div>
                 </div>
             </div>
-        </div> : <div/>);
+        </div>);
     }
 }
 
