@@ -2,7 +2,6 @@ import React from "react";
 import '../css/Dashboard.css'
 import '../css/common.css'
 import $ from "jquery";
-import Cookies from "universal-cookie/es6";
 import {Modal, Toast} from "bootstrap";
 import {useNavigate} from "react-router-dom";
 import logo from '../assets/logo.svg';
@@ -11,7 +10,6 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.props = props
-        this.cookie = new Cookies();
         this.state = {
             user: {},
             question: "",
@@ -27,17 +25,15 @@ class Main extends React.Component {
 
     refreshRecentPolls = () => {
         $.ajax({
-            url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/dashboard",
+            url: "https://3.6.198.164.nip.io/dashboard",
             type: "GET",
             crossDomain: true,
             xhrFields: {
                 withCredentials: true
             },
-            headers: {"x-csrftoken": this.cookie.get('csrftoken')},
             complete: () => {
             },
             success: (data, textStatus, xhr) => {
-                console.log(data)
                 if (data.status === 1) {
                     this.setState({apiStatus: 1});
                     this.setState({
@@ -81,13 +77,12 @@ class Main extends React.Component {
     logout = () => {
         $.ajax(
             {
-                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/dashboard",
+                url: "https://3.6.198.164.nip.io/dashboard",
                 type: "PUT",
                 crossDomain: true,
                 xhrFields: {
                     withCredentials: true
                 },
-                headers: {"x-csrftoken": this.cookie.get('csrftoken')},
                 complete: () => {
 
                 },
@@ -143,7 +138,6 @@ class Main extends React.Component {
     }
 
     addOptions = () => {
-        console.log(this.state.options)
         if (this.state.options.length < 5) {
             let opts = this.state.options
             opts.push("")
@@ -160,13 +154,12 @@ class Main extends React.Component {
                 else opts.push(null)
             }
             $.ajax({
-                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/dashboard",
+                url: "https://3.6.198.164.nip.io/dashboard",
                 type: "POST",
                 crossDomain: true,
                 xhrFields: {
                     withCredentials: true
                 },
-                headers: {"x-csrftoken": this.cookie.get('csrftoken')},
                 data: {question: this.state.question, options: opts},
                 complete: () => {
                     if (this.state.apiStatus === 1) {
@@ -194,19 +187,17 @@ class Main extends React.Component {
     deletePoll = () => {
         $.ajax(
             {
-                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/dashboard/" + this.state.needsDelete,
+                url: "https://3.6.198.164.nip.io/dashboard/" + this.state.needsDelete,
                 type: "DELETE",
                 crossDomain: true,
                 xhrFields: {
                     withCredentials: true
                 },
-                headers: {"x-csrftoken": this.cookie.get('csrftoken')},
                 complete: () => {
 
                 },
                 success: (data, textStatus, xhr) => {
                     if (data.status === 1) {
-                        console.log(data.status)
                         this.refreshRecentPolls()
                         new Toast("#toast-delete").show()
                     }

@@ -37,7 +37,6 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props);
-        this.cookie = new Cookies();
         this.props = props;
         this.state = {
             error: "", uname: "", pwd: "", cnfPwd: "", email: "", apiResponse: null, apiStatus: 0
@@ -47,13 +46,12 @@ class Main extends React.Component {
     componentDidMount() {
         $.ajax(
             {
-                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/signup",
+                url: "https://3.6.198.164.nip.io/signup",
                 type: "GET",
                 crossDomain: true,
                 xhrFields: {
                     withCredentials: true
                 },
-                headers: {"x-csrftoken": this.cookie.get('csrftoken')},
                 complete: () => {
 
                 },
@@ -92,7 +90,7 @@ class Main extends React.Component {
                 new Modal(document.getElementById("modal-1")).show();
             }
         } else {
-            this.setState({error: "An Service error occurred.."})
+            this.setState({error: "A Service error occurred.."})
         }
     }
     onSubmitClick = (e) => {
@@ -120,7 +118,7 @@ class Main extends React.Component {
                 return;
             }
             $.ajax({
-                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/signup",
+                url: "https://3.6.198.164.nip.io/signup",
                 type: "POST",
                 dataType: "json",
                 crossDomain: true,

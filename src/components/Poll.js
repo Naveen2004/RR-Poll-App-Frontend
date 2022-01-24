@@ -2,7 +2,6 @@ import React from "react";
 import '../css/Poll.css';
 import '../css/Poll_bs.css';
 import {useParams} from "react-router-dom";
-import Cookies from "universal-cookie";
 import $ from "jquery";
 import poll404 from '../assets/poll404.png';
 import kallaVote from '../assets/kallaVote.jpg';
@@ -21,8 +20,6 @@ class Main extends React.Component {
                 question: "", options: []
             }, checked: false, selectedOption: null, isValid: true, result: false, notFound: false, kallaVote: false
         };
-        this.cookie = new Cookies();
-        console.log(this.props.pollId);
     }
 
     componentDidMount() {
@@ -31,11 +28,10 @@ class Main extends React.Component {
         if (x !== null) secondAttempt = x.includes(this.props.pollId)
 
         $.ajax({
-            url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/poll/" + this.props.pollId, type: "GET", crossDomain: true, xhrFields: {
+            url: "https://3.6.198.164.nip.io/poll/" + this.props.pollId, type: "GET", crossDomain: true, xhrFields: {
                 withCredentials: true
-            }, headers: {"x-csrftoken": this.cookie.get('csrftoken')}, complete: () => {
+            }, complete: () => {
             }, success: (data, textStatus, xhr) => {
-                console.log(data)
                 if (data.status === 1) {
                     this.setState({apiStatus: 1, data: data.data, kallaVote: secondAttempt});
 
@@ -101,27 +97,16 @@ class Main extends React.Component {
             return
         }
         $.ajax({
-            url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/poll/" + this.props.pollId,
-            type: "POST",
-            crossDomain: true,
-            xhrFields: {
+            url: "https://3.6.198.164.nip.io/poll/" + this.props.pollId, type: "POST", crossDomain: true, xhrFields: {
                 withCredentials: true
-            },
-            headers: {"x-csrftoken": this.cookie.get('csrftoken')},
-            data: {"voted": this.state.data.options[this.state.selectedOption]},
-            complete: () => {
+            }, data: {"voted": this.state.data.options[this.state.selectedOption]}, complete: () => {
                 this.setState({result: true})
-            },
-            success: (data, textStatus, xhr) => {
-                console.log(data)
+            }, success: (data, textStatus, xhr) => {
                 this.setState({apiStatus: 1, votings: data.votes, totalVotes: data.totalvotes});
                 let x = JSON.parse(localStorage.getItem("voted"))
-                console.log(typeof x)
                 if (x === null) x = [this.props.pollId]; else x.push(this.props.pollId)
-                console.log(x)
                 localStorage.setItem("voted", JSON.stringify(x))
-            },
-            error: () => {
+            }, error: () => {
                 this.setState({apiStatus: -1})
             }
         });

@@ -9,7 +9,6 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.props = props
-        this.cookie = new Cookies();
         this.state = {
             uname: "",
             pwd: "",
@@ -22,13 +21,12 @@ class Main extends React.Component {
     componentDidMount() {
         $.ajax(
             {
-                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000:8000/login",
+                url: "https://3.6.198.164.nip.io/login",
                 type: "GET",
                 crossDomain: true,
                 xhrFields: {
                     withCredentials: true
                 },
-                headers: {"x-csrftoken": this.cookie.get('csrftoken')},
                 complete: () => {
 
                 },
@@ -56,10 +54,9 @@ class Main extends React.Component {
                 this.setState({error: this.state.apiResponse.message});
             } else if (this.state.apiResponse.status === 1) {
                 this.props.navigate('/dashboard')
-                console.log("jdijfisjci")
             }
         } else {
-            this.setState({error: "An service error occurred.."});
+            this.setState({error: "A service error occurred.."});
         }
     }
     onSubmitClick = (e) => {
@@ -67,7 +64,7 @@ class Main extends React.Component {
         let cookie = new Cookies();
         if (this.state.uname !== "" || this.state.pwd !== "") {
             $.ajax({
-                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/login",
+                url: "https://3.6.198.164.nip.io/login",
                 type: "POST",
                 dataType: "json",
                 crossDomain: true,
