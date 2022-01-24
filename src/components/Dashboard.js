@@ -27,7 +27,7 @@ class Main extends React.Component {
 
     refreshRecentPolls = () => {
         $.ajax({
-            url: "http://localhost:8000/dashboard",
+            url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/dashboard",
             type: "GET",
             crossDomain: true,
             xhrFields: {
@@ -81,7 +81,7 @@ class Main extends React.Component {
     logout = () => {
         $.ajax(
             {
-                url: "http://localhost:8000/dashboard",
+                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/dashboard",
                 type: "PUT",
                 crossDomain: true,
                 xhrFields: {
@@ -160,7 +160,7 @@ class Main extends React.Component {
                 else opts.push(null)
             }
             $.ajax({
-                url: "http://localhost:8000/dashboard",
+                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/dashboard",
                 type: "POST",
                 crossDomain: true,
                 xhrFields: {
@@ -194,7 +194,7 @@ class Main extends React.Component {
     deletePoll = () => {
         $.ajax(
             {
-                url: "http://localhost:8000/dashboard/" + this.state.needsDelete,
+                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/dashboard/" + this.state.needsDelete,
                 type: "DELETE",
                 crossDomain: true,
                 xhrFields: {

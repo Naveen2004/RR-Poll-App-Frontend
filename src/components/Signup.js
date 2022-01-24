@@ -47,7 +47,7 @@ class Main extends React.Component {
     componentDidMount() {
         $.ajax(
             {
-                url: "http://localhost:8000/signup",
+                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/signup",
                 type: "GET",
                 crossDomain: true,
                 xhrFields: {
@@ -120,7 +120,7 @@ class Main extends React.Component {
                 return;
             }
             $.ajax({
-                url: "http://localhost:8000/signup",
+                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/signup",
                 type: "POST",
                 dataType: "json",
                 crossDomain: true,

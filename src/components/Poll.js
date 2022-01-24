@@ -31,7 +31,7 @@ class Main extends React.Component {
         if (x !== null) secondAttempt = x.includes(this.props.pollId)
 
         $.ajax({
-            url: "http://localhost:8000/poll/" + this.props.pollId, type: "GET", crossDomain: true, xhrFields: {
+            url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/poll/" + this.props.pollId, type: "GET", crossDomain: true, xhrFields: {
                 withCredentials: true
             }, headers: {"x-csrftoken": this.cookie.get('csrftoken')}, complete: () => {
             }, success: (data, textStatus, xhr) => {
@@ -101,7 +101,7 @@ class Main extends React.Component {
             return
         }
         $.ajax({
-            url: "http://localhost:8000/poll/" + this.props.pollId,
+            url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/poll/" + this.props.pollId,
             type: "POST",
             crossDomain: true,
             xhrFields: {

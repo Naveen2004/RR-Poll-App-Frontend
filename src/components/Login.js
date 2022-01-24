@@ -22,7 +22,7 @@ class Main extends React.Component {
     componentDidMount() {
         $.ajax(
             {
-                url: "http://localhost:8000/login",
+                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000:8000/login",
                 type: "GET",
                 crossDomain: true,
                 xhrFields: {
@@ -67,7 +67,7 @@ class Main extends React.Component {
         let cookie = new Cookies();
         if (this.state.uname !== "" || this.state.pwd !== "") {
             $.ajax({
-                url: "http://localhost:8000/login",
+                url: "http://ec2-3-6-198-164.ap-south-1.compute.amazonaws.com:8000/login",
                 type: "POST",
                 dataType: "json",
                 crossDomain: true,
