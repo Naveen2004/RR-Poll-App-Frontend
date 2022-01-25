@@ -1,6 +1,6 @@
 import React from "react";
 import '../css/Poll.css';
-import '../css/Poll_bs.css';
+import '../css/Poll_bs.scss';
 import {useParams} from "react-router-dom";
 import $ from "jquery";
 import poll404 from '../assets/poll404.png';

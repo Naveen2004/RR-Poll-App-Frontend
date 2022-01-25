@@ -1,6 +1,6 @@
 import React from "react";
 import '../css/Dashboard.css'
-import '../css/common.css'
+import '../css/common.scss'
 import $ from "jquery";
 import {Modal, Toast} from "bootstrap";
 import {useNavigate} from "react-router-dom";
@@ -103,8 +103,8 @@ class Main extends React.Component {
         }
         return (<div className="card recents" key={index}>
             <div className="card-header d-flex justify-content-between">
-                <h5 className="mb-0">{"Q: " + poll.question}</h5>
-                <span>{!poll.expired ? <i className="fa fa-trash-o" onClick={() => {
+                <h5 className="mb-0" style={{lineHeight: "1.6"}}>{"Q: " + poll.question}</h5>
+                <span style={{marginLeft: "10px"}}>{!poll.expired ? <i className="fa fa-trash-o" onClick={() => {
                     this.setState({needsDelete: poll.link});
                     new Modal("#modal-2").show()
                 }}/> : <p>expired</p>}</span>
@@ -215,7 +215,7 @@ class Main extends React.Component {
             {this.state.options.map(this.createOptions)}
         </div>;
 
-        let recentPolls = <div className="d-flex flex-column align-items-center">
+        let recentPolls = <div className="d-flex flex-column align-items-center pb-4">
             {this.state.recentPolls.map(this.setRecentPolls)}
         </div>;
 
@@ -224,7 +224,7 @@ class Main extends React.Component {
                 <img src={logo} alt="logo"/>
                 <h1 className="text-center">DASHBOARD</h1>
             </header>
-            <div className="col mx-auto">
+            <div className={"col mx-auto " +(this.state.user.name?"":"visually-hidden")}>
                 <div className="d-flex justify-content-between user">
                     <p className="d-inline-block"
                     >{"Welcome, " + (this.state.user.name?this.state.user.name:"")}</p>

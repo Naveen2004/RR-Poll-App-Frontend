@@ -39,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "sass": "^1.49.0",
+    "sass-loader": "^12.4.0",
+    "webpack": "^5.67.0"
   }
 }

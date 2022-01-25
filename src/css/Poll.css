@@ -56,9 +56,9 @@ div.poll-bg {
 .poll p.question {
     font-family: 'Montserrat', sans-serif;
     color: black;
+    margin-left: 10px;
     font-weight: 700 !important;
-    font-size: 25px !important;
-    max-height: 75px !important;
+    /*max-height: 75px;*/
 }
 
 .poll p.question:first-letter {
@@ -176,7 +176,10 @@ div.poll-bg {
     .poll div.button-group > button {
         width: 100px !important;
     }
-
+    .poll p.question {
+        font-size: 18px;
+        text-align: justify;
+    }
     .poll div.button-group {
         padding: 0 5px !important;
     }
@@ -191,7 +194,9 @@ div.poll-bg {
     .poll header > h1 {
         font-size: 70px !important;
     }
-
+    .poll p.question{
+        font-size: 25px;
+    }
     .poll div.options-wrapper:hover {
         background-color: #22222211;
     }

@@ -14,11 +14,11 @@ ReactDOM.render(
     <React.StrictMode>
         <Router>
             <Routes>
-                <Route path="" element={<Index/>}/>
                 <Route path="poll/:pollId" element={<Poll/>}/>
                 <Route path="login" element={<Login/>}/>
                 <Route path="signup" element={<Signup/>}/>
                 <Route path="dashboard" element={<Dashboard/>}/>
+                <Route path="*" element={<Index/>}/>
             </Routes>
         </Router>
     </React.StrictMode>,

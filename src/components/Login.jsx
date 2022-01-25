@@ -62,7 +62,7 @@ class Main extends React.Component {
     onSubmitClick = (e) => {
         e.preventDefault();
         let cookie = new Cookies();
-        if (this.state.uname !== "" || this.state.pwd !== "") {
+        if (this.state.uname !== "" && this.state.pwd !== "") {
             $.ajax({
                 url: "https://3.6.198.164.nip.io/login",
                 type: "POST",
