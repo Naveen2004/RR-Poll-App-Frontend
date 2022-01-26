@@ -1,7 +1,6 @@
 import React from "react";
 import '../css/Login.css';
 import $ from 'jquery';
-import Cookies from "universal-cookie";
 import {useNavigate} from "react-router-dom";
 import logo from '../assets/logo.svg';
 
@@ -61,7 +60,6 @@ class Main extends React.Component {
     }
     onSubmitClick = (e) => {
         e.preventDefault();
-        let cookie = new Cookies();
         if (this.state.uname !== "" && this.state.pwd !== "") {
             $.ajax({
                 url: "https://3.6.198.164.nip.io/login",
@@ -71,7 +69,6 @@ class Main extends React.Component {
                 xhrFields: {
                     withCredentials: true
                 },
-                headers: {"x-csrftoken": cookie.get('csrftoken')},
                 data: {uname: this.state.uname, pwd: this.state.pwd},
                 complete: () => {
                     this.apiRequestComplete();

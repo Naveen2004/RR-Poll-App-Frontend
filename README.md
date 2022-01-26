@@ -31,7 +31,4 @@ The polls that are created by the user are listed below in the dashboard page. I
 
 ## Sample Shots
 
-<img src="gitAssets/poll.png" width="60%" align="left" style="margin: 10px; border-radius: 5px">
-<img src="gitAssets/dashboard.png" width="60%" align="right" style="margin: 10px; border-radius: 5px">
-<img src="gitAssets/signup.png" width="60%" align="left" style="margin: 10px; border-radius: 5px">
-<img src="gitAssets/login.png" width="60%" align="right" style="margin: 10px; border-radius: 5px">
+![sample](gitAssets/sample.gif)

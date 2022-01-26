@@ -72,7 +72,7 @@ class Main extends React.Component {
                 </div>
                 <span
                     className={"d-block " + (!this.state.result ? "visually-hidden" : "")}
-                    style={{textShadow: this.state.result ? "1px 1px 2px #000000cc, 1px -1px 4px #00000033" : "initial"}}>{this.state.result ? (`${(this.state.votings[index] / this.state.totalVotes * 100).toFixed(2)}%`) : ""}</span>
+                    style={{textShadow: this.state.result ? "1px 1px 2px #000000cc, 1px -1px 4px #00000033" : "initial"}}>{this.state.result ? (`${Math.round(this.state.votings[index] / this.state.totalVotes * 100)}%`) : ""}</span>
             </div>
         </div>);
     }

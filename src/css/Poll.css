@@ -38,9 +38,7 @@ div.poll-bg {
 }
 
 .poll div.main {
-    /*flex: 2 !important;*/
     max-width: 500px !important;
-    margin-top: 50px;
 }
 
 .poll div.main > div.row {
@@ -169,19 +167,25 @@ div.poll-bg {
 }
 
 @media only screen and (max-width: 376px) {
+    .poll div.main {
+        margin-top: 20px;
+    }
+
     .poll header > h1 {
         font-size: 50px !important;
     }
 
     .poll div.button-group > button {
-        width: 100px !important;
+        width: 120px !important;
     }
+
     .poll p.question {
         font-size: 18px;
         text-align: justify;
     }
+
     .poll div.button-group {
-        padding: 0 5px !important;
+        padding: 0 10px !important;
     }
 
     .poll button.negative {
@@ -191,12 +195,18 @@ div.poll-bg {
 }
 
 @media only screen and (min-width: 376px) {
+    .poll div.main {
+        margin-top: 50px;
+    }
+
     .poll header > h1 {
         font-size: 70px !important;
     }
-    .poll p.question{
+
+    .poll p.question {
         font-size: 25px;
     }
+
     .poll div.options-wrapper:hover {
         background-color: #22222211;
     }

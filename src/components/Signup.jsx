@@ -3,7 +3,6 @@ import {Link, useNavigate} from "react-router-dom";
 import React from "react";
 import $ from "jquery";
 import {Modal} from "bootstrap";
-import Cookies from "universal-cookie";
 import logo from "../assets/logo.svg";
 
 
@@ -95,8 +94,7 @@ class Main extends React.Component {
     }
     onSubmitClick = (e) => {
         e.preventDefault();
-        let cookie = new Cookies();
-        if (this.state.uname !== "" || this.state.pwd !== "" || this.state.cnfPwd !== "") {
+        if (this.state.uname !== "" && this.state.pwd !== "" && this.state.cnfPwd !== "") {
             if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email)) {
                 this.setState({error: "Please Enter a valid Email.."})
                 return;
@@ -125,7 +123,6 @@ class Main extends React.Component {
                 xhrFields: {
                     withCredentials: true
                 },
-                headers: {"x-csrftoken": cookie.get('csrftoken')},
                 data: {uname: this.state.uname, email: this.state.email, pwd: this.state.pwd},
                 complete: () => {
                     this.apiRequestComplete();

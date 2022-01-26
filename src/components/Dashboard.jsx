@@ -98,11 +98,11 @@ class Main extends React.Component {
     setRecentPolls = (poll, index, arr) => {
         const votesPercent = (votes, total) => {
             if (votes === 0 && total === 0) return 0
-            else return votes / total * 100
+            else return Math.round(votes / total * 100)
 
         }
         return (<div className="card recents" key={index}>
-            <div className="card-header d-flex justify-content-between">
+            <div className="card-header d-flex justify-content-between align-items-center">
                 <h5 className="mb-0" style={{lineHeight: "1.6"}}>{"Q: " + poll.question}</h5>
                 <span style={{marginLeft: "10px"}}>{!poll.expired ? <i className="fa fa-trash-o" onClick={() => {
                     this.setState({needsDelete: poll.link});
@@ -112,9 +112,9 @@ class Main extends React.Component {
             <div className="card-body">
                 {poll.options.map((opt, index, arr) => {
                     return <div className="d-flex justify-content-between" key={index}>
-                        <p>{`Option${index + 1}: ${opt}`}</p>
+                        <p className="option">{`Opt${index + 1}: ${opt}`}</p>
                         <span className="show-votes">
-                        {`${votesPercent(poll.votes[index], poll.totalvotes).toFixed(2)}% (${poll.votes[index] + " vote" + (poll.votes[index] > 1 ? "s" : "")})`}
+                        {`${votesPercent(poll.votes[index], poll.totalvotes)}% (${poll.votes[index] + " vote" + (poll.votes[index] > 1 ? "s" : "")})`}
                     </span>
                     </div>;
                 })}
@@ -224,10 +224,10 @@ class Main extends React.Component {
                 <img src={logo} alt="logo"/>
                 <h1 className="text-center">DASHBOARD</h1>
             </header>
-            <div className={"col mx-auto " +(this.state.user.name?"":"visually-hidden")}>
+            <div className={"col mx-auto " + (this.state.user.name ? "" : "visually-hidden")}>
                 <div className="d-flex justify-content-between user">
                     <p className="d-inline-block"
-                    >{"Welcome, " + (this.state.user.name?this.state.user.name:"")}</p>
+                    >{"Welcome, " + (this.state.user.name ? this.state.user.name : "")}</p>
                     <a className="logout" href="#" onClick={this.logout}>Logout</a>
                 </div>
                 <form noValidate={true}>

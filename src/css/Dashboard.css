@@ -30,11 +30,6 @@ h1, h2, label {
     padding: 10px 0;
 }
 
-.dashboard .col {
-    width: 90%;
-    max-width: 500px;
-}
-
 .dashboard .col .logout {
     color: darkgoldenrod;
 }
@@ -173,9 +168,9 @@ h1, h2, label {
 .dashboard .card {
     background: var(--bs-gray-700);
     color: var(--bs-gray-100);
-    width: 90%;
+    width: 95%;
     max-width: 700px;
-    margin: 5px 5px 0;
+    margin: 15px 0 0;
 }
 
 .dashboard .recents .card-header span p {
@@ -194,9 +189,12 @@ h1, h2, label {
     font-size: 20px;
 }
 
+.dashboard .recents .card-body span.show-votes {
+    margin-left: 10px;
+}
+
 .dashboard .card .card-body .input-group {
     margin: auto;
-    width: 80%;
     max-width: 450px;
 }
 
@@ -230,4 +228,31 @@ h1, h2, label {
     background: var(--bs-gray-700);
     color: var(--bs-gray-100);
     box-shadow: 0 0 20px 3px #333333cc;
+}
+
+@media only screen and (max-width: 426px) {
+    .dashboard .col {
+        width: 95%;
+        max-width: 500px;
+    }
+
+    .dashboard .recents .card-header h5 {
+        font-size: 18px;
+    }
+
+    .dashboard .recents .card-footer {
+        flex-direction: column;
+    }
+
+    .dashboard .recents .card-body p.option {
+        max-height: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .dashboard .recents .card-body span.show-votes {
+        min-width: 110px;
+        text-align: right;
+    }
 }

@@ -8,10 +8,19 @@
 # testing
 /coverage
 
+#firebase
+/.firebase
+.firebaserc
+firebase.json
+
+#idea
+/.idea
+
 # production
 /build
 
 # misc
+.gitignore
 .DS_Store
 .env.local
 .env.development.local
