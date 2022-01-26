@@ -7,7 +7,8 @@ Using this application, one can create polls, quizzes, get suggestions, public o
 During the [sign up](https://rr-polls.web.app/signup), the users are needed to provide an _Username_, _Email Address_, _Password_ to the form and after successful sign in they are asked to [log in](https://rr-polls.web.app/login) with their _Username_ and _Password_ which are created during sign up process and after successful authentication, they are redirected to the **[Dashboard](https://rr-polls.web.app/dashboard)**. In there, they can see a form for creating poll with one question and one option as required fields. Using that, one can create a poll, and after creation the poll is allocated with a unique link through which the poll can be accessed.<br/><br/>
 Adjacent to the link, there is a copy button, which copies the link to the clipboard and below there is provided with [Whatsapp](https://whatsapp.com)  share button which shares the link directly to whatsapp.
 The polls that are created by the user are listed below in the dashboard page. If the poll is active, the it is displayed with a delete button which deletes the poll and the corresponding link to the poll.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---
 
 ## Technologies Used🧬
 
