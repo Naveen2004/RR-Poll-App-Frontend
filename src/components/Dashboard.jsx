@@ -258,7 +258,7 @@ class Main extends React.Component {
                     <div className="row btn-bar">
                         <div className="col d-flex justify-content-between">
                             <button className="btn btn-danger" type="button"
-                                    onClick={() => this.setState({question: "", options: [""]})}>Reset
+                                    onClick={() => this.setState({question: "", options: [""], error: ""})}>Reset
                             </button>
                             <button className="btn btn-success" type="submit"
                                     onClick={e => this.onCreatePoll(e)}>Create
