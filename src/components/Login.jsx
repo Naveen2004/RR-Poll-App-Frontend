@@ -80,7 +80,7 @@ class Main extends React.Component {
                     this.setState({apiStatus: -1})
                 }
             })
-        }
+        } else this.setState({error: "Please check the above fields."});
     }
 
     render() {
