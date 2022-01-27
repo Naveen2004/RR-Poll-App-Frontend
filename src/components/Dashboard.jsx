@@ -249,9 +249,11 @@ class Main extends React.Component {
                     </div>
                     <div className="row">
                         <div className="col text-end">
-                            <button className="btn btn-primary add-btn" type="button"
-                                    disabled={this.state.options.length >= 5}
-                                    onClick={() => this.addOptions()}>Add Option<i className="fa fa-plus"/>
+                            <button
+                                className={"btn btn-primary add-btn " + (this.state.options.length !== 5 ? "" : "visually-hidden")}
+                                type="button"
+                                disabled={this.state.options.length === 5}
+                                onClick={() => this.addOptions()}>Add Option<i className="fa fa-plus"/>
                             </button>
                         </div>
                     </div>
