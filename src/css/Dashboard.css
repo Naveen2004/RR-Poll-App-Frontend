@@ -30,6 +30,11 @@ h1, h2, label {
     padding: 10px 0;
 }
 
+.dashboard .col {
+    width: 95%;
+    max-width: 500px;
+}
+
 .dashboard .col .logout {
     color: darkgoldenrod;
 }
@@ -231,10 +236,6 @@ h1, h2, label {
 }
 
 @media only screen and (max-width: 426px) {
-    .dashboard .col {
-        width: 95%;
-        max-width: 500px;
-    }
 
     .dashboard .recents .card-header h5 {
         font-size: 18px;
