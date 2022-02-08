@@ -187,7 +187,7 @@ class Main extends React.Component {
     deletePoll = () => {
         $.ajax(
             {
-                url: "https://3.6.198.164.nip.io/dashboard/" + this.state.needsDelete,
+                url: "https://3.6.198.164.nip.io/dashboard/delete/" + this.state.needsDelete,
                 type: "DELETE",
                 crossDomain: true,
                 xhrFields: {
