@@ -28,7 +28,7 @@ class Main extends React.Component {
         if (x !== null) secondAttempt = x.includes(this.props.pollId)
 
         $.ajax({
-            url: "https://3.6.198.164.nip.io/poll/" + this.props.pollId, type: "GET", crossDomain: true, xhrFields: {
+            url: "https://rr-polls.herokuapp.com/poll/" + this.props.pollId, type: "GET", crossDomain: true, xhrFields: {
                 withCredentials: true
             }, complete: () => {
             }, success: (data, textStatus, xhr) => {
@@ -97,7 +97,7 @@ class Main extends React.Component {
             return
         }
         $.ajax({
-            url: "https://3.6.198.164.nip.io/poll/" + this.props.pollId, type: "POST", crossDomain: true, xhrFields: {
+            url: "https://rr-polls.herokuapp.com/poll/" + this.props.pollId, type: "POST", crossDomain: true, xhrFields: {
                 withCredentials: true
             }, data: {"voted": this.state.data.options[this.state.selectedOption]}, complete: () => {
                 this.setState({result: true})

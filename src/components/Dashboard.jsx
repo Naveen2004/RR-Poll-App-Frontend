@@ -25,7 +25,7 @@ class Main extends React.Component {
 
     refreshRecentPolls = () => {
         $.ajax({
-            url: "https://3.6.198.164.nip.io/dashboard",
+            url: "https://rr-polls.herokuapp.com/dashboard",
             type: "GET",
             crossDomain: true,
             xhrFields: {
@@ -77,7 +77,7 @@ class Main extends React.Component {
     logout = () => {
         $.ajax(
             {
-                url: "https://3.6.198.164.nip.io/dashboard",
+                url: "https://rr-polls.herokuapp.com/dashboard",
                 type: "PUT",
                 crossDomain: true,
                 xhrFields: {
@@ -154,7 +154,7 @@ class Main extends React.Component {
                 else opts.push(null)
             }
             $.ajax({
-                url: "https://3.6.198.164.nip.io/dashboard",
+                url: "https://rr-polls.herokuapp.com/dashboard",
                 type: "POST",
                 crossDomain: true,
                 xhrFields: {
@@ -187,7 +187,7 @@ class Main extends React.Component {
     deletePoll = () => {
         $.ajax(
             {
-                url: "https://3.6.198.164.nip.io/dashboard/delete/" + this.state.needsDelete,
+                url: "https://rr-polls.herokuapp.com/dashboard/delete/" + this.state.needsDelete,
                 type: "DELETE",
                 crossDomain: true,
                 xhrFields: {

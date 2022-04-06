@@ -20,7 +20,7 @@ class Main extends React.Component {
     componentDidMount() {
         $.ajax(
             {
-                url: "https://3.6.198.164.nip.io/login",
+                url: "https://rr-polls.herokuapp.com/login",
                 type: "GET",
                 crossDomain: true,
                 xhrFields: {
@@ -62,7 +62,7 @@ class Main extends React.Component {
         e.preventDefault();
         if (this.state.uname !== "" && this.state.pwd !== "") {
             $.ajax({
-                url: "https://3.6.198.164.nip.io/login",
+                url: "https://rr-polls.herokuapp.com/login",
                 type: "POST",
                 dataType: "json",
                 crossDomain: true,
